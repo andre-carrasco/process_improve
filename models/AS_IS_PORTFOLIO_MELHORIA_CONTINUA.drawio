@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="Electron" modified="2026-09-21" agent="Claude" version="24.0">
+  <diagram name="Gestão de Projetos de Melhoria Contínua - AS-IS" id="bpmn-portfolio">
+    <mxGraphModel dx="1200" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="2400" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Pool Principal -->
+        <mxCell id="pool1" value="Gestão de Projetos de Melhoria Contínua &amp; Redução de Custos" style="swimlane;html=1;startSize=30;horizontal=1;swimlaneHead=1;swimlaneBody=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontFamily=Helvetica;fontSize=14;fontStyle=1;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="1520" height="2240" as="geometry" />
+        </mxCell>
+
+        <!-- Lane 1: Analista -->
+        <mxCell id="lane1" value="Analista de Melhoria Contínua" style="swimlane;html=1;startSize=20;horizontal=0;fillColor=#f0f0f0;strokeColor=#999999;strokeWidth=1;fontFamily=Helvetica;fontSize=11;" parent="pool1" vertex="1">
+          <mxGeometry x="0" y="30" width="800" height="2210" as="geometry" />
+        </mxCell>
+
+        <!-- Lane 2: Gestor -->
+        <mxCell id="lane2" value="Gestor/Líder de Projeto" style="swimlane;html=1;startSize=20;horizontal=0;fillColor=#f5f5f5;strokeColor=#999999;strokeWidth=1;fontFamily=Helvetica;fontSize=11;" parent="pool1" vertex="1">
+          <mxGeometry x="800" y="30" width="400" height="2210" as="geometry" />
+        </mxCell>
+
+        <!-- Lane 3: Diretor -->
+        <mxCell id="lane3" value="Diretor/Gerente" style="swimlane;html=1;startSize=20;horizontal=0;fillColor=#fafafa;strokeColor=#999999;strokeWidth=1;fontFamily=Helvetica;fontSize=11;" parent="pool1" vertex="1">
+          <mxGeometry x="1200" y="30" width="320" height="2210" as="geometry" />
+        </mxCell>
+
+        <!-- FLUXO 1: Início -->
+        <mxCell id="start1" value="" style="ellipse;html=1;fillColor=#90EE90;strokeColor=#00AA00;strokeWidth=2;" parent="lane1" vertex="1">
+          <mxGeometry x="70" y="80" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- FLUXO 2: Reunião Quinzenal -->
+        <mxCell id="event-reuniao" value="Reunião Quinzenal" style="ellipse;html=1;fillColor=#E3F2FD;strokeColor=#1976D2;strokeWidth=2;fontSize=10;" parent="lane1" vertex="1">
+          <mxGeometry x="50" y="140" width="70" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge1" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#333333;strokeWidth=2;endArrow=block;endSize=10;" parent="lane1" source="start1" target="event-reuniao" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- TAREFA: Levantamento -->
+        <mxCell id="task-levantamento" value="Levantamento &amp;&#xa;Captura de Ideias&#xa;(Ata)" style="rounded=1;html=1;fillColor=#E1F5FF;strokeColor=#0277BD;strokeWidth=2;fontSize=9;" parent="lane1" vertex="1">
+          <mxGeometry x="30" y="240" width="110" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge2" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#333333;strokeWidth=2;endArrow=block;endSize=10;" parent="lane1" source="event-reuniao" target="task-levantamento" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- TAREFA: Priorização -->
+        <mxCell id="task-matriz" value="Priorização na Matriz&#xa;Esforço (1-5) x Impacto (1-5)" style="rounded=1;html=1;fillColor=#E1F5FF;strokeColor=#0277BD;strokeWidth=2;fontSize=9;" parent="lane1" vertex="1">
+          <mxGeometry x="30" y="360" width="110" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge3" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#333333;strokeWidth=2;endArrow=block;endSize=10;" parent="lane1" source="task-levantamento" target="task-matriz" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- GATEWAY 1: Classificação -->
+        <mxCell id="gw-classificacao" value="Classificação?" style="rhombus;html=1;fillColor=#FFF3CD;strokeColor=#FF9800;strokeWidth=2;fontSize=9;" parent="lane1" vertex="1">
+          <mxGeometry x="55" y="500" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge4" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#333333;strokeWidth=2;endArrow=block;endSize=10;" parent="lane1" source="task-matriz" target="gw-classificacao" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- RAMO 1: Quick Win -->
+        <mxCell id="task-quick-win" value="Implementação Rápida (Lean)" style="rounded=1;html=1;fillColor=#C8E6C9;strokeColor=#388E3C;strokeWidth=2;fontSize=9;" parent="lane1" vertex="1">
+          <mxGeometry x="30" y="620" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-qw" value="Quick Win" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#FF6B6B;strokeWidth=2;endArrow=block;endSize=10;fontSize=8;" parent="lane1" source="gw-classificacao" target="task-quick-win" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- RAMO 2: Preencher -->
+        <mxCell id="task-preencher" value="Apenas Acompanhamento" style="rounded=1;html=1;fillColor=#E0E0E0;strokeColor=#616161;strokeWidth=2;fontSize=9;" parent="lane1" vertex="1">
+          <mxGeometry x="200" y="620" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-preencher" value="Preencher" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#424242;strokeWidth=2;endArrow=block;endSize=10;fontSize=8;" parent="lane1" source="gw-classificacao" target="task-preencher" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- RAMO 3: Abrir Projeto -->
+        <mxCell id="task-comunicar" value="Comunicar &amp; Direcionar" style="rounded=1;html=1;fillColor=#E1F5FF;strokeColor=#0277BD;strokeWidth=2;fontSize=9;" parent="lane1" vertex="1">
+          <mxGeometry x="30" y="770" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-abrir" value="Abrir Projeto" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#1976D2;strokeWidth=2;endArrow=block;endSize=10;fontSize=8;" parent="lane1" source="gw-classificacao" target="task-comunicar" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- RAMO 4: Analisar -->
+        <mxCell id="end-backlog" value="Backlog" style="ellipse;html=1;fillColor=#FFE0B2;strokeColor=#E65100;strokeWidth=2;fontSize=8;" parent="lane1" vertex="1">
+          <mxGeometry x="350" y="620" width="70" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-analisar" value="Analisar" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#E65100;strokeWidth=2;endArrow=block;endSize=10;fontSize=8;" parent="lane1" source="gw-classificacao" target="end-backlog" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Convergência -->
+        <mxCell id="task-iniciar" value="Iniciar Execução" style="rounded=1;html=1;fillColor=#E1F5FF;strokeColor=#0277BD;strokeWidth=2;fontSize=9;" parent="lane1" vertex="1">
+          <mxGeometry x="30" y="900" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-qw-conv" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#333333;strokeWidth=2;endArrow=block;endSize=10;" parent="lane1" source="task-quick-win" target="task-iniciar" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- GATEWAY 2: Há orçamento? -->
+        <mxCell id="gw-orcamento" value="Há orçamento?" style="rhombus;html=1;fillColor=#FFF3CD;strokeColor=#FF9800;strokeWidth=2;fontSize=9;" parent="lane1" vertex="1">
+          <mxGeometry x="55" y="1020" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-comunicar-orcamento" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#333333;strokeWidth=2;endArrow=block;endSize=10;" parent="lane1" source="task-comunicar" target="gw-orcamento" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Sem orçamento -->
+        <mxCell id="edge-sem-orcamento" value="NÃO" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#FF6B6B;strokeWidth=2;endArrow=block;endSize=10;fontSize=8;" parent="lane1" source="gw-orcamento" target="task-iniciar" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Com orçamento (para Diretor) -->
+        <mxCell id="edge-com-orcamento" value="SIM" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#4CAF50;strokeWidth=2;endArrow=block;endSize=10;fontSize=8;" parent="lane1" source="gw-orcamento" target="task-solicitar" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Tarefa na lane do Diretor -->
+        <mxCell id="task-solicitar" value="Solicitar Aprovação Orçamento" style="rounded=1;html=1;fillColor=#FFF9C4;strokeColor=#F57F17;strokeWidth=2;fontSize=9;" parent="lane3" vertex="1">
+          <mxGeometry x="1230" y="1010" width="90" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- GATEWAY 3: Aprovado? -->
+        <mxCell id="gw-aprovado" value="Aprovado?" style="rhombus;html=1;fillColor=#FFF3CD;strokeColor=#FF9800;strokeWidth=2;fontSize=9;" parent="lane3" vertex="1">
+          <mxGeometry x="1255" y="1130" width="50" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-solicitar-aprovado" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor:#333333;strokeWidth=2;endArrow=block;endSize=10;" parent="lane3" source="task-solicitar" target="gw-aprovado" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Cancelado -->
+        <mxCell id="end-cancelado" value="Cancelado" style="ellipse;html=1;fillColor=#FFB6C6;strokeColor=#FF0000;strokeWidth=2;fontSize=9;" parent="lane3" vertex="1">
+          <mxGeometry x="1255" y="1250" width="50" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-nao-aprovado" value="NÃO" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor:#FF0000;strokeWidth=2;endArrow=block;endSize=10;fontSize=8;" parent="lane3" source="gw-aprovado" target="end-cancelado" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Aprovado vai para execução -->
+        <mxCell id="edge-aprovado-execucao" value="SIM" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor:#4CAF50;strokeWidth=2;endArrow=block;endSize=10;fontSize=8;" parent="lane3" source="gw-aprovado" target="gw-modo" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- GATEWAY 4: Modo de Execução -->
+        <mxCell id="gw-modo" value="Modo de Execução?" style="rhombus;html=1;fillColor=#FFF3CD;strokeColor=#FF9800;strokeWidth=2;fontSize=8;" parent="lane1" vertex="1">
+          <mxGeometry x="55" y="1380" width="60" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-aprova-modo" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor:#333333;strokeWidth=2;endArrow=block;endSize=10;" parent="lane1" source="task-iniciar" target="gw-modo" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Analista conduz -->
+        <mxCell id="task-analista-conduz" value="Conduzir Projeto Lean Seis Sigma (DMAIC) ~4 meses" style="rounded=1;html=1;fillColor=#B3E5FC;strokeColor=#01579B;strokeWidth=2;fontSize=9;" parent="lane1" vertex="1">
+          <mxGeometry x="20" y="1530" width="100" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-analista" value="Analista conduz" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor:#01579B;strokeWidth=2;endArrow=block;endSize=10;fontSize=8;" parent="lane1" source="gw-modo" target="task-analista-conduz" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Gestor executa -->
+        <mxCell id="task-gestor-executa" value="Executar com Supervisão (Analista monitora)" style="rounded=1;html=1;fillColor=#F8BBD0;strokeColor=#C2185B;strokeWidth=2;fontSize=9;" parent="lane2" vertex="1">
+          <mxGeometry x="810" y="1540" width="100" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-gestor" value="Gestor executa" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#C2185B;strokeWidth=2;endArrow=block;endSize=10;fontSize=8;" parent="lane1" source="gw-modo" target="task-gestor-executa" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Acompanhamento -->
+        <mxCell id="task-acompanhamento" value="Acompanhamento Contínuo (MES/SAP + Relatórios)" style="rounded=1;html=1;fillColor=#E1F5FF;strokeColor=#0277BD;strokeWidth=2;fontSize=9;" parent="lane1" vertex="1">
+          <mxGeometry x="30" y="1700" width="110" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-analista-acomp" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor:#333333;strokeWidth=2;endArrow=block;endSize=10;" parent="lane1" source="task-analista-conduz" target="task-acompanhamento" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-gestor-acomp" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor:#333333;strokeWidth=2;endArrow=block;endSize=10;" parent="lane1" source="task-gestor-executa" target="task-acompanhamento" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="1575" />
+            <mxPoint x="85" y="1700" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- GATEWAY 5: Dentro do esperado? -->
+        <mxCell id="gw-desvio" value="Dentro do esperado?" style="rhombus;html=1;fillColor=#FFF3CD;strokeColor=#FF9800;strokeWidth=2;fontSize=8;" parent="lane1" vertex="1">
+          <mxGeometry x="50" y="1840" width="70" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-acomp-desvio" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor:#333333;strokeWidth=2;endArrow=block;endSize=10;" parent="lane1" source="task-acompanhamento" target="gw-desvio" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Ajustar rumo -->
+        <mxCell id="task-ajustar" value="Ajustar Rumo" style="rounded=1;html=1;fillColor=#FFE0B2;strokeColor=#E65100;strokeWidth=2;fontSize=9;" parent="lane1" vertex="1">
+          <mxGeometry x="150" y="1850" width="80" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-nao-esperado" value="NÃO" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor:#E65100;strokeWidth=2;endArrow=block;endSize=10;fontSize=8;" parent="lane1" source="gw-desvio" target="task-ajustar" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="edge-loop-ajuste" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor:#E65100;strokeWidth=2;endArrow=block;endSize=10;" parent="lane1" source="task-ajustar" target="task-acompanhamento" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="190" y="1870" />
+            <mxPoint x="250" y="1735" />
+            <mxPoint x="200" y="1735" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- GATEWAY 6: Meta atingida ou 1 ano? -->
+        <mxCell id="gw-conclusao" value="Meta atingida ou 1 ano?" style="rhombus;html=1;fillColor=#FFF3CD;strokeColor=#FF9800;strokeWidth=2;fontSize=8;" parent="lane1" vertex="1">
+          <mxGeometry x="45" y="1960" width="80" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-esperado" value="SIM" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#4CAF50;strokeWidth=2;endArrow=block;endSize=10;fontSize=8;" parent="lane1" source="gw-desvio" target="gw-conclusao" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Continuar acompanhamento -->
+        <mxCell id="edge-nao-conclusao" value="NÃO" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor:#FF6B6B;strokeWidth=2;endArrow=block;endSize=10;fontSize=8;" parent="lane1" source="gw-conclusao" target="task-acompanhamento" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Encerramento -->
+        <mxCell id="task-encerramento" value="Encerramento &amp; Documentação Final (PDF)" style="rounded=1;html=1;fillColor=#E1F5FF;strokeColor=#0277BD;strokeWidth=2;fontSize=9;" parent="lane1" vertex="1">
+          <mxGeometry x="25" y="2090" width="120" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-conclusao" value="SIM" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#4CAF50;strokeWidth=2;endArrow=block;endSize=10;fontSize=8;" parent="lane1" source="gw-conclusao" target="task-encerramento" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Monitoramento pós -->
+        <mxCell id="task-monitoramento-pos" value="Monitoramento Pós-Encerramento (~6 meses)" style="rounded=1;html=1;fillColor=#E1F5FF;strokeColor=#0277BD;strokeWidth=2;fontSize=9;" parent="lane1" vertex="1">
+          <mxGeometry x="20" y="2200" width="120" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-encerramento-monit" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor:#333333;strokeWidth=2;endArrow=block;endSize=10;" parent="lane1" source="task-encerramento" target="task-monitoramento-pos" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- GATEWAY 7: Sustentável? -->
+        <mxCell id="gw-sustentabilidade" value="Sustentável?" style="rhombus;html=1;fillColor=#FFF3CD;strokeColor=#FF9800;strokeWidth=2;fontSize=9;" parent="lane1" vertex="1">
+          <mxGeometry x="190" y="2220" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-monit-sustent" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor:#333333;strokeWidth=2;endArrow=block;endSize=10;" parent="lane1" source="task-monitoramento-pos" target="gw-sustentabilidade" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- FIM: Sucesso -->
+        <mxCell id="end-sucesso" value="Encerrado com Sucesso" style="ellipse;html=1;fillColor=#90EE90;strokeColor=#00AA00;strokeWidth=2;fontSize=9;" parent="lane1" vertex="1">
+          <mxGeometry x="310" y="2220" width="70" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-sustentavel" value="SIM" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#4CAF50;strokeWidth=2;endArrow=block;endSize=10;fontSize=8;" parent="lane1" source="gw-sustentabilidade" target="end-sucesso" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Revisão de solução -->
+        <mxCell id="task-revisao" value="Revisão de Solução" style="rounded=1;html=1;fillColor=#FFE0B2;strokeColor=#E65100;strokeWidth=2;fontSize=9;" parent="lane1" vertex="1">
+          <mxGeometry x="410" y="2220" width="80" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-nao-sustentavel" value="NÃO" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#E65100;strokeWidth=2;endArrow=block;endSize=10;fontSize=8;" parent="lane1" source="gw-sustentabilidade" target="task-revisao" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- FIM: Ajustes -->
+        <mxCell id="end-ajustes" value="Encerrado com Ajustes" style="ellipse;html=1;fillColor=#FFB6C6;strokeColor=#FF0000;strokeWidth=2;fontSize=9;" parent="lane1" vertex="1">
+          <mxGeometry x="530" y="2220" width="70" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-revisao-fim" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor:#FF0000;strokeWidth=2;endArrow=block;endSize=10;" parent="lane1" source="task-revisao" target="end-ajustes" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
