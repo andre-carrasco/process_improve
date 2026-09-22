@@ -33,6 +33,51 @@ arquitetura-de-processos  →  mapeamento-de-processos  →  modelagem-de-proces
                                                                                           monitoramento)
 ```
 
+## 📁 Estrutura de Projetos
+
+Este repositório está organizado por **projetos de mapeamento**. Cada projeto tem seu próprio espaço com coleta de dados, modelagem e redesenho.
+
+### Projetos Ativos
+
+| Projeto | Status | Pasta | Descrição |
+|---------|--------|-------|-----------|
+| **PCP — Fechamento de OP** | 🟡 Coleta de Dados | [`projetos/pcp_fechamento_op/`](projetos/pcp_fechamento_op/) | Mapeamento do processo de fechamento de Ordem de Produção no departamento de PCP — taxa de erro 33%, falta confiabilidade de dados |
+
+### Estrutura de um Projeto
+
+Cada projeto em `projetos/<nome>/` segue esta estrutura:
+
+```
+projetos/<nome>/
+├── 01_coleta_dados/          # Fase 1: Descoberta AS-IS
+│   ├── roteiros/             # Roteiros de entrevista
+│   ├── gemba_walk/           # Checklists e observações in loco
+│   ├── analises/             # Consolidação de dados
+│   └── README.md             # Status e achados
+│
+├── 02_modelagem/             # Fase 2: Formalização em BPMN
+│   ├── diagrama_asis.drawio  # Diagrama AS-IS editável
+│   ├── diagrama_asis.png     # Exportação PNG
+│   └── [documentação]
+│
+├── 03_redesenho/             # Fase 3: Otimização & Proposta TO-BE
+│   ├── proposta_melhorias.md # Recomendações
+│   ├── diagrama_tobe.drawio  # Diagrama TO-BE
+│   └── plano_implementacao.md
+│
+└── README.md                 # Índice e status do projeto
+```
+
+### Como Consultar um Projeto
+
+Abra o `README.md` da pasta do projeto para ver:
+- Status atual
+- Achados principais
+- Próximos passos
+- Arquivos de cada fase
+
+**Exemplo:** [`projetos/pcp_fechamento_op/README.md`](projetos/pcp_fechamento_op/README.md)
+
 ## Pré-requisitos
 
 - [Claude Code](https://claude.com/claude-code)
